@@ -1,0 +1,122 @@
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="{{STATIC_URL}}recursos_comunes/foundation/css/foundation.css" />
+    
+    
+    <link rel="stylesheet" href="{{STATIC_URL}}recursos_comunes/foundation/img/foundation-icons/foundation-icons/foundation-icons.css">
+    <script src="{{STATIC_URL}}recursos_comunes/foundation/js/vendor/modernizr.js"></script>
+
+    <link rel="stylesheet" href="{{STATIC_URL}}recursos_comunes/calendar/css/paragridma.css">
+
+  <!-- Core CSS File. The CSS code needed to make eventCalendar works -->
+  <link rel="stylesheet" href="{{STATIC_URL}}recursos_comunes/calendar/css/eventCalendar.css">
+
+  <!-- Theme CSS file: it makes eventCalendar nicer -->
+  <link rel="stylesheet" href="{{STATIC_URL}}recursos_comunes/calendar/css/eventCalendar_theme_responsive.css">
+  <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}recursos_comunes/datetimepicker/jquery.datetimepicker.css"/>
+
+  <!--<script src="js/jquery.js" type="text/javascript"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+  <script src="{{STATIC_URL}}recursos_comunes/datetimepicker/jquery.js"></script>
+  <script src="{{STATIC_URL}}recursos_comunes/datetimepicker/jquery.datetimepicker.js"></script>
+
+
+  </head>
+  <body>
+  <div class="row">
+<div class="large-12 columns">
+<div class="panel">
+<h1>SERVIMED</h1>
+</div>
+</div>
+</div>
+<div class="row">
+ 
+ 
+<div class="large-3 columns ">
+<div class="panel">
+<a href="#"><img src="{{STATIC_URL}}recursos_comunes/foundation/img/iconfinderfree/receptionist.png"></a>
+<h3><a href="#">RECEPCION</a></h3>
+<div class="section-container vertical-nav" data-section="" data-options="deep_linking: false; one_up: true">
+<section class="section">
+<h5 class="title"><a href="datospersonales.html">Nuevo Usuario</a></h5>
+</section>
+<section class="section">
+<h5 class="title"><a href="#">Buscar Usuario</a></h5>
+</section>
+<section class="section">
+<h5 class="title"><a href="#">Agendar</a></h5>
+</section>
+<section class="section">
+
+</div>
+</div>
+</div>
+ 
+ 
+<div class="large-9 columns">
+ 
+<div class="row">
+
+<h4></h4>
+<div>
+      
+        <div id="eventCalendarHumanDate"></div>
+        <script>
+          $(document).ready(function() {
+            $("#eventCalendarHumanDate").eventCalendar({
+              eventsjson: 'datosjson/',
+              jsonDateFormat: 'human'  // 'YYYY-MM-DD HH:MM:SS'
+            });
+          });
+        </script>
+</div>
+<form action="/verfecha/" name="prueba" id="prueba" method="POST">{% csrf_token %}
+<h3>DateTimePicker</h3>
+  <input type="text" value="" id="datetimepicker" name="fecha" /><br><br>
+   <button class="Submit">Ingresar</button>
+</form>
+
+
+
+
+
+</div>
+</div>
+
+<footer class="row">
+<div class="large-12 columns">
+<hr>
+<div class="row">
+<div class="large-5 columns">
+<p></p>
+</div>
+<div class="large-7 columns">
+<ul class="inline-list right">
+<li><a href="#">Section 1</a></li>
+<li><a href="#">Section 2</a></li>
+<li><a href="#">Section 3</a></li>
+<li><a href="#">Section 4</a></li>
+<li><a href="#">Section 5</a></li>
+<li><a href="#">Section 6</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+
+
+  </body>
+  <script src="{{STATIC_URL}}recursos_comunes/calendar/js/jquery.eventCalendar.js" type="text/javascript"></script>
+  <script>
+$('#datetimepicker').datetimepicker({
+dayOfWeekStart : 1,
+lang:'es',
+startDate:  '1986/01/05'
+});
+$('#datetimepicker').datetimepicker({value:'2014/04/15 05:03',step:10});
+</script>
+  </html>
